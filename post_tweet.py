@@ -20,7 +20,7 @@ table = dynamodb.Table('tweets')
 
 def handler(event, context):
     # Get tweet from dynamo
-    response = table.scan(FilterExpression=Key('status').eq(0), Limit=100)
+    response = table.scan(FilterExpression=Key('status').eq(0), PageSize=)
     tweet = response['Items'][0]
     print(tweet['text'])
     # Translate to portuguese
